@@ -46,9 +46,9 @@ class Redirect_to_member {
 		$this->EE =& get_instance();
 
 		$url = array();
-		$url['base'] 		= (ee()->TMPL->fetch_param('base_url')) ? ee()->TMPL->fetch_param('base_url') : '';
-		$url['member'] 	= ($this->EE->session->userdata('username')) ? $this->EE->session->userdata('username') : '';
-		$url['extra'] 	= (ee()->TMPL->fetch_param('extra')) ? ee()->TMPL->fetch_param('extra') : '';
+		$url['base'] = (ee()->TMPL->fetch_param('base_url')) ? ee()->TMPL->fetch_param('base_url') : '';
+		$url['member'] = ($this->EE->session->userdata('username')) ? $this->EE->session->userdata('username') : '';
+		$url['extra'] = (ee()->TMPL->fetch_param('extra')) ? ee()->TMPL->fetch_param('extra') : '';
 
 		$login_path = (ee()->TMPL->fetch_param('login_path')) ? ee()->TMPL->fetch_param('login_path') : '/';
 		
@@ -60,7 +60,7 @@ class Redirect_to_member {
 		elseif ($this->EE->session->userdata('username'))
 		{
 			$redirect = implode ( "/" , $url );
-			ee()->functions->redirect("/$redirect");
+			ee()->functions->redirect("$redirect");
 		}
 
 	}
